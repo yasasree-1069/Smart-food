@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donate Food - Smart Food Connect</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#eaf8ff,#cfefff);
+min-height:100vh;
+overflow-y:auto;
+padding:100px 40px 40px;
+display:flex;
+justify-content:center;
+}
+
+.food{
+position:absolute;
+font-size:35px;
+opacity:.5;
+animation:float linear infinite;
+}
+
+.food:nth-child(1){left:5%;animation-duration:8s;}
+.food:nth-child(2){left:15%;animation-duration:10s;}
+.food:nth-child(3){left:25%;animation-duration:9s;}
+.food:nth-child(4){left:35%;animation-duration:11s;}
+.food:nth-child(5){left:45%;animation-duration:8s;}
+.food:nth-child(6){left:55%;animation-duration:12s;}
+.food:nth-child(7){left:65%;animation-duration:10s;}
+.food:nth-child(8){left:75%;animation-duration:9s;}
+.food:nth-child(9){left:85%;animation-duration:13s;}
+
+@keyframes float{
+0%{
+transform:translateY(100vh) rotate(0deg);
+opacity:0;
+}
+50%{
+opacity:.7;
+}
+100%{
+transform:translateY(-120vh) rotate(360deg);
+opacity:0;
+}
+}
+
+.container{
+width:750px;
+position:relative;
+z-index:1;
+}
+
+.top-box{
+background:#0b5ed7;
+color:white;
+padding:40px;
+border-radius:25px;
+text-align:center;
+margin-bottom:30px;
+box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+.top-box h1{
+font-size:38px;
+margin-bottom:15px;
+}
+
+.donate-box{
+background:white;
+padding:40px;
+border-radius:25px;
+box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+.input-group{
+margin-bottom:20px;
+}
+
+.input-group label{
+display:block;
+margin-bottom:8px;
+font-weight:bold;
+color:#0b5ed7;
+font-size:18px;
+}
+
+input,select{
+width:100%;
+padding:15px;
+border-radius:10px;
+border:1px solid #ccc;
+outline:none;
+}
+
+input:focus,
+select:focus{
+border-color:#0b5ed7;
+}
+
+.icon{
+display:inline-block;
+animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+0%{transform:translateY(0);}
+50%{transform:translateY(-6px);}
+100%{transform:translateY(0);}
+}
+
+.donate-btn{
+width:100%;
+padding:15px;
+border:none;
+border-radius:10px;
+background:#0b5ed7;
+color:white;
+font-size:18px;
+cursor:pointer;
+margin-top:15px;
+}
+
+.donate-btn:hover{
+background:#084298;
+transform:scale(1.02);
+}
+
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+background:#0b5ed7;
+color:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 8%;
+box-shadow:0 5px 15px rgba(0,0,0,.2);
+z-index:1000;
+}
+
+nav h2{
+font-size:26px;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:20px;
+}
+
+nav ul li a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+nav ul li a:hover{
+color:#ffd54f;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="food">🍎</div>
+<div class="food">🥗</div>
+<div class="food">🥕</div>
+<div class="food">🍞</div>
+<div class="food">🥛</div>
+<div class="food">🍚</div>
+<div class="food">🌾</div>
+<div class="food">🌶️</div>
+<div class="food">🍅</div>
+
+<nav>
+<h2>🍽 Smart Food Connect</h2>
+
+<ul>
+<li><a href="donor_dashboard.html">Dashboard</a></li>
+<li><a href="login_register.html">Logout</a></li>
+</ul>
+
+</nav>
+
+
+<div class="container">
+
+<div class="top-box">
+
+<h1>🍽 Donate Food</h1>
+
+<p>
+Share surplus food and help people in need
+</p>
+
+</div>
+
+<div class="donate-box">
+
+<div class="input-group">
+
+<label>
+<span class="icon">🍱</span>
+Food Name
+</label>
+
+<input
+type="text"
+id="foodName"
+placeholder="Food Name">
+
+</div>
+
+
+<div class="input-group">
+
+<label>
+<span class="icon">📦</span>
+Quantity
+</label>
+
+<input
+type="text"
+id="quantity"
+placeholder="Quantity">
+
+</div>
+
+
+<div class="input-group">
+
+<label>
+<span class="icon">📍</span>
+Pickup Location
+</label>
+
+<input
+type="text"
+id="location"
+placeholder="Location">
+
+</div>
+
+
+<div class="input-group">
+
+<label>
+<span class="icon">⏰</span>
+Expiry Time
+</label>
+
+<input
+type="datetime-local"
+id="expiry">
+
+</div>
+
+
+<div class="input-group">
+
+<label>
+<span class="icon">🥗</span>
+Food Type
+</label>
+
+<select id="foodType">
+
+<option value="Veg">
+Veg 🥗
+</option>
+
+<option value="NonVeg">
+Non-Veg 🍗
+</option>
+
+<option value="Beverages">
+Beverages 🥛
+</option>
+
+<option value="Bakery">
+Bakery 🍞
+</option>
+
+</select>
+
+</div>
+
+
+<button
+class="donate-btn"
+id="donateBtn">
+
+🤝 Donate Food
+
+</button>
+
+</div>
+
+</div>
+
+
+<script type="module"
+src="./js/donor.js">
+</script>
+
+</body>
+</html>

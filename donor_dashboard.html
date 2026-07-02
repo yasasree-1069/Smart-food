@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donor Dashboard</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#eaf8ff,#cfefff);
+overflow-x:hidden;
+}
+
+/* Navbar */
+
+nav{
+background:#0b5ed7;
+color:white;
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:20px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* Food Animation */
+
+.food{
+position:absolute;
+font-size:35px;
+opacity:.4;
+animation:float linear infinite;
+}
+
+.food:nth-child(1){left:5%;animation-duration:8s;}
+.food:nth-child(2){left:15%;animation-duration:10s;}
+.food:nth-child(3){left:25%;animation-duration:9s;}
+.food:nth-child(4){left:35%;animation-duration:11s;}
+.food:nth-child(5){left:45%;animation-duration:8s;}
+.food:nth-child(6){left:55%;animation-duration:12s;}
+.food:nth-child(7){left:65%;animation-duration:10s;}
+.food:nth-child(8){left:75%;animation-duration:9s;}
+.food:nth-child(9){left:85%;animation-duration:13s;}
+
+@keyframes float{
+
+0%{
+transform:translateY(100vh) rotate(0deg);
+opacity:0;
+}
+
+50%{
+opacity:.6;
+}
+
+100%{
+transform:translateY(-120vh) rotate(360deg);
+opacity:0;
+}
+
+}
+
+/* Container */
+
+.container{
+padding:40px;
+position:relative;
+z-index:1;
+}
+
+h1{
+color:#0b5ed7;
+margin-bottom:30px;
+}
+
+/* Summary Cards */
+
+.summary{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+margin-bottom:40px;
+}
+
+.card{
+background:white;
+padding:25px;
+width:250px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+text-align:center;
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card h2{
+color:#0b5ed7;
+margin-bottom:10px;
+}
+
+/* Active Donation Icon Animation */
+
+.donate-header{
+display:flex;
+align-items:center;
+gap:15px;
+margin-bottom:20px;
+}
+
+.donate-icon{
+font-size:35px;
+animation:donateMove 2s infinite ease-in-out;
+}
+
+@keyframes donateMove{
+
+0%{
+transform:translateX(0px);
+}
+
+50%{
+transform:translateX(12px);
+}
+
+100%{
+transform:translateX(0px);
+}
+
+}
+
+/* Table */
+
+.table-box{
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+}
+
+th{
+background:#0b5ed7;
+color:white;
+padding:15px;
+}
+
+td{
+padding:15px;
+text-align:center;
+border-bottom:1px solid #ddd;
+}
+
+button{
+padding:8px 15px;
+border:none;
+border-radius:8px;
+background:#0b5ed7;
+color:white;
+cursor:pointer;
+}
+
+button:hover{
+background:#084298;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="food">🍎</div>
+<div class="food">🥗</div>
+<div class="food">🥕</div>
+<div class="food">🍞</div>
+<div class="food">🥛</div>
+<div class="food">🍚</div>
+<div class="food">🌾</div>
+<div class="food">🌶️</div>
+<div class="food">🍅</div>
+
+<nav>
+
+<h2>🍽 Smart Food Connect</h2>
+
+<ul>
+<li><a href="donate_food.html">Donate Food</a></li>
+<li><a href="contact_us.html">Contact</a></li>
+<li><a href="login_register.html">Logout</a></li>
+</ul>
+
+</nav>
+
+<div class="container">
+
+<h1>Donor Dashboard</h1>
+
+<div class="summary">
+
+<div class="card">
+<h2>25</h2>
+<p>Total Donations</p>
+</div>
+
+<div class="card">
+<h2>8</h2>
+<p>Active Donations</p>
+</div>
+
+<div class="card">
+<h2>17</h2>
+<p>Completed Donations</p>
+</div>
+
+</div>
+
+<div class="table-box">
+
+<div class="donate-header">
+
+<h2 style="color:#0b5ed7;">
+Active Donations
+</h2>
+
+<div class="donate-icon">
+🧑‍🍳➡️🍱🤝
+</div>
+
+</div>
+
+<table>
+
+<tr>
+<th>Food Item</th>
+<th>Quantity</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+
+<tr>
+<td>Rice Meals 🍚</td>
+<td>30 Packs</td>
+<td>Pending</td>
+<td>
+<button onclick="viewDonation()">View</button>
+</td>
+</tr>
+
+<tr>
+<td>Bread 🍞</td>
+<td>20 Packs</td>
+<td>Accepted</td>
+<td>
+<button onclick="manageDonation()">Manage</button>
+</td>
+</tr>
+
+<tr>
+<td>Vegetable Meals 🥗</td>
+<td>15 Packs</td>
+<td>In Delivery</td>
+<td>
+<button onclick="manageDonation()">Manage</button>
+</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<script>
+
+function viewDonation(){
+    window.location.href="available_donations.html";
+}
+
+function manageDonation(){
+    window.location.href="available_donations.html";
+}
+
+</script>
+
+</body>
+</html>

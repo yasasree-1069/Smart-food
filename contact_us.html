@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - Smart Food Connect</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#eaf8ff,#cfefff);
+min-height:100vh;
+padding:40px;
+overflow-y:auto;
+overflow-x:hidden;
+display:flex;
+justify-content:center;
+}
+
+/* Background Food Animation */
+
+.food{
+position:absolute;
+font-size:35px;
+opacity:.5;
+animation:float linear infinite;
+}
+
+.food:nth-child(1){left:5%;animation-duration:8s;}
+.food:nth-child(2){left:15%;animation-duration:10s;}
+.food:nth-child(3){left:25%;animation-duration:9s;}
+.food:nth-child(4){left:35%;animation-duration:11s;}
+.food:nth-child(5){left:45%;animation-duration:8s;}
+.food:nth-child(6){left:55%;animation-duration:12s;}
+.food:nth-child(7){left:65%;animation-duration:10s;}
+.food:nth-child(8){left:75%;animation-duration:9s;}
+.food:nth-child(9){left:85%;animation-duration:13s;}
+
+@keyframes float{
+
+0%{
+transform:translateY(100vh) rotate(0deg);
+opacity:0;
+}
+
+50%{
+opacity:.7;
+}
+
+100%{
+transform:translateY(-120vh) rotate(360deg);
+opacity:0;
+}
+
+}
+
+.container{
+width:700px;
+max-width:100%;
+position:relative;
+z-index:1;
+}
+
+/* Header */
+
+.header{
+background:#0b5ed7;
+padding:35px;
+border-radius:20px;
+text-align:center;
+color:white;
+box-shadow:0 10px 25px rgba(0,0,0,.2);
+margin-bottom:30px;
+}
+
+.header-icon{
+font-size:55px;
+animation:bounce 2s infinite;
+}
+
+.header h1{
+font-size:38px;
+margin-top:10px;
+}
+
+.card{
+background:white;
+padding:35px;
+border-radius:20px;
+box-shadow:0 10px 20px rgba(0,0,0,.15);
+}
+
+.card h2{
+text-align:center;
+color:#0b5ed7;
+margin-bottom:25px;
+}
+
+input,textarea{
+
+width:100%;
+padding:15px;
+margin:12px 0;
+border-radius:10px;
+border:1px solid #ccc;
+outline:none;
+font-size:15px;
+
+}
+
+input:focus,
+textarea:focus{
+
+border-color:#0b5ed7;
+
+}
+
+textarea{
+
+height:130px;
+resize:none;
+
+}
+
+button{
+
+width:100%;
+padding:15px;
+border:none;
+background:#0b5ed7;
+color:white;
+font-size:17px;
+border-radius:10px;
+cursor:pointer;
+margin-top:10px;
+transition:.3s;
+
+}
+
+button:hover{
+
+background:#084298;
+transform:scale(1.02);
+
+}
+
+@keyframes bounce{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-8px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="food">🍎</div>
+<div class="food">🥗</div>
+<div class="food">🥕</div>
+<div class="food">🍞</div>
+<div class="food">🥛</div>
+<div class="food">🍚</div>
+<div class="food">🌾</div>
+<div class="food">🌶️</div>
+<div class="food">🍅</div>
+
+<div class="container">
+
+<div class="header">
+
+<div class="header-icon">
+📞
+</div>
+
+<h1>Contact Us</h1>
+
+<p>
+Have questions or suggestions? Send us a message.
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>
+💬 Send Message
+</h2>
+
+<input
+type="text"
+id="contactName"
+placeholder="Enter Name">
+
+<input
+type="email"
+id="contactEmail"
+placeholder="Enter Email">
+
+<input
+type="text"
+id="subject"
+placeholder="Subject">
+
+<textarea
+id="contactMessage"
+placeholder="Write your message here">
+</textarea>
+
+<button id="sendBtn">
+
+🤝 Send Message
+
+</button>
+
+</div>
+
+</div>
+
+<script type="module" src="./js/contact.js"></script>
+
+</body>
+</html>

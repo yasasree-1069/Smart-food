@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Food Connect</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#eaf8ff,#cfefff);
+display:flex;
+justify-content:center;
+align-items:flex-start;
+min-height:100vh;
+overflow-y:auto;
+overflow-x:hidden;
+padding:40px;
+}
+
+.food{
+position:absolute;
+font-size:35px;
+opacity:.5;
+animation:float linear infinite;
+}
+
+.food:nth-child(1){left:5%;animation-duration:8s;}
+.food:nth-child(2){left:15%;animation-duration:10s;}
+.food:nth-child(3){left:25%;animation-duration:9s;}
+.food:nth-child(4){left:35%;animation-duration:11s;}
+.food:nth-child(5){left:45%;animation-duration:8s;}
+.food:nth-child(6){left:55%;animation-duration:12s;}
+.food:nth-child(7){left:65%;animation-duration:10s;}
+.food:nth-child(8){left:75%;animation-duration:9s;}
+.food:nth-child(9){left:85%;animation-duration:13s;}
+
+@keyframes float{
+
+0%{
+transform:translateY(100vh) rotate(0deg);
+opacity:0;
+}
+
+50%{
+opacity:.7;
+}
+
+100%{
+transform:translateY(-120vh) rotate(360deg);
+opacity:0;
+}
+
+}
+
+.container{
+width:800px;
+margin-top:30px;
+position:relative;
+z-index:1;
+}
+
+.main-box{
+background:white;
+padding:50px;
+border-radius:30px;
+text-align:center;
+position:relative;
+box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+.top-set{
+position:absolute;
+top:20px;
+left:20px;
+font-size:35px;
+animation:moveSet 2s infinite;
+}
+
+.bottom-set{
+position:absolute;
+bottom:20px;
+right:20px;
+font-size:35px;
+animation:moveSet 2s infinite;
+}
+
+@keyframes moveSet{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-8px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+.plate{
+width:100px;
+height:100px;
+background:white;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+margin:20px auto;
+font-size:28px;
+border:4px solid #0b5ed7;
+box-shadow:0 0 20px rgba(11,94,215,.4);
+animation:plateMove 3s infinite;
+}
+
+@keyframes plateMove{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-12px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
+
+.main-box h1{
+font-size:40px;
+color:#0b5ed7;
+margin:15px;
+}
+
+.desc{
+line-height:30px;
+font-size:17px;
+color:#555;
+margin-bottom:30px;
+}
+
+hr{
+margin:25px 0;
+border:1px solid #ddd;
+}
+
+.tabs{
+display:flex;
+justify-content:center;
+gap:25px;
+margin-bottom:25px;
+}
+
+.tabs button{
+background:#0b5ed7;
+color:white;
+border:none;
+padding:12px 35px;
+border-radius:20px;
+cursor:pointer;
+font-size:16px;
+}
+
+.tabs button:hover{
+background:#084298;
+}
+
+.form{
+display:flex;
+flex-direction:column;
+}
+
+input,select{
+padding:16px;
+margin:12px 0;
+border:1px solid #ccc;
+border-radius:10px;
+font-size:15px;
+outline:none;
+}
+
+input:focus,select:focus{
+border-color:#0b5ed7;
+}
+
+.submit-btn{
+background:#0b5ed7;
+color:white;
+padding:15px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+font-size:16px;
+margin-top:10px;
+}
+
+.submit-btn:hover{
+background:#084298;
+}
+
+.forgot{
+font-size:12px;
+margin-top:8px;
+text-align:left;
+}
+
+.forgot a{
+text-decoration:none;
+color:#0b5ed7;
+font-weight:bold;
+}
+
+.register{
+display:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="food">🍎</div>
+<div class="food">🥗</div>
+<div class="food">🥕</div>
+<div class="food">🍞</div>
+<div class="food">🥛</div>
+<div class="food">🍚</div>
+<div class="food">🌾</div>
+<div class="food">🌶️</div>
+<div class="food">🍅</div>
+
+<div class="container">
+
+<div class="main-box">
+
+<div class="top-set">🍴🔪</div>
+<div class="bottom-set">🍴🔪</div>
+
+<div class="plate">
+🍚🥗🍅
+</div>
+
+<h1>🍽️ Smart Food Connect</h1>
+
+<p class="desc">
+Join us in reducing food waste by connecting food donors, NGOs and volunteers
+</p>
+
+<hr>
+
+<div class="tabs">
+<button onclick="showLogin()">Login</button>
+<button onclick="showRegister()">Register</button>
+</div>
+
+<!-- LOGIN -->
+
+<div class="form login">
+
+<input type="email"
+id="loginEmail"
+placeholder="Email">
+
+<input type="password"
+id="loginPassword"
+placeholder="Password">
+
+<button class="submit-btn"
+id="loginBtn">
+
+Login
+
+</button>
+
+<div class="forgot">
+<a href="#">Forgot Password?</a>
+</div>
+
+</div>
+
+
+<!-- REGISTER -->
+
+<div class="form register">
+
+<input type="text"
+id="name"
+placeholder="Full Name">
+
+<input type="email"
+id="email"
+placeholder="Email">
+
+<input type="password"
+id="password"
+placeholder="Password">
+
+<input type="password"
+id="confirmPassword"
+placeholder="Confirm Password">
+
+<select id="role">
+
+<option value="">Select Role</option>
+<option value="donor">Donor</option>
+<option value="ngo">NGO</option>
+<option value="volunteer">Volunteer</option>
+<option value="admin">Admin</option>
+
+</select>
+
+<button class="submit-btn"
+id="registerBtn">
+
+Register
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function showRegister(){
+
+document.querySelector(".login").style.display="none";
+
+document.querySelector(".register").style.display="flex";
+
+}
+
+function showLogin(){
+
+document.querySelector(".register").style.display="none";
+
+document.querySelector(".login").style.display="flex";
+
+}
+
+</script>
+
+<script type="module" src="./js/auth.js"></script>
+
+</body>
+</html>

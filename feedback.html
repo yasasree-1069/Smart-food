@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feedback - Smart Food Connect</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#eaf8ff,#cfefff);
+min-height:100vh;
+padding:40px;
+overflow-y:auto;
+overflow-x:hidden;
+display:flex;
+justify-content:center;
+}
+
+/* Background Food Animation */
+
+.food{
+position:absolute;
+font-size:35px;
+opacity:.5;
+animation:float linear infinite;
+}
+
+.food:nth-child(1){left:5%;animation-duration:8s;}
+.food:nth-child(2){left:15%;animation-duration:10s;}
+.food:nth-child(3){left:25%;animation-duration:9s;}
+.food:nth-child(4){left:35%;animation-duration:11s;}
+.food:nth-child(5){left:45%;animation-duration:8s;}
+.food:nth-child(6){left:55%;animation-duration:12s;}
+.food:nth-child(7){left:65%;animation-duration:10s;}
+.food:nth-child(8){left:75%;animation-duration:9s;}
+.food:nth-child(9){left:85%;animation-duration:13s;}
+
+@keyframes float{
+
+0%{
+transform:translateY(100vh) rotate(0deg);
+opacity:0;
+}
+
+50%{
+opacity:.7;
+}
+
+100%{
+transform:translateY(-120vh) rotate(360deg);
+opacity:0;
+}
+
+}
+
+.container{
+
+width:700px;
+max-width:100%;
+background:white;
+padding:40px;
+border-radius:25px;
+box-shadow:0 10px 30px rgba(0,0,0,.2);
+position:relative;
+z-index:1;
+margin-top:30px;
+margin-bottom:30px;
+
+}
+
+.back{
+
+position:absolute;
+top:20px;
+left:20px;
+text-decoration:none;
+background:#0b5ed7;
+color:white;
+padding:10px 18px;
+border-radius:20px;
+font-weight:bold;
+transition:.3s;
+
+}
+
+.back:hover{
+
+background:#084298;
+
+}
+
+.icon{
+
+font-size:70px;
+text-align:center;
+animation:bounce 2s infinite;
+
+}
+
+@keyframes bounce{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-10px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
+
+h1{
+
+text-align:center;
+color:#0b5ed7;
+margin:15px 0;
+
+}
+
+p{
+
+text-align:center;
+color:#555;
+margin-bottom:25px;
+
+}
+
+.input-group{
+
+margin-bottom:18px;
+
+}
+
+label{
+
+display:block;
+margin-bottom:8px;
+font-weight:bold;
+color:#0b5ed7;
+
+}
+
+input,
+select,
+textarea{
+
+width:100%;
+padding:14px;
+border:1px solid #ccc;
+border-radius:10px;
+outline:none;
+font-size:15px;
+
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+
+border-color:#0b5ed7;
+
+}
+
+textarea{
+
+resize:none;
+height:120px;
+
+}
+
+.submit-btn{
+
+width:100%;
+padding:15px;
+background:#0b5ed7;
+color:white;
+border:none;
+border-radius:10px;
+font-size:17px;
+cursor:pointer;
+transition:.3s;
+
+}
+
+.submit-btn:hover{
+
+background:#084298;
+transform:scale(1.03);
+
+}
+
+@media(max-width:768px){
+
+.container{
+
+padding:30px 20px;
+
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="food">🍎</div>
+<div class="food">🥗</div>
+<div class="food">🥕</div>
+<div class="food">🍞</div>
+<div class="food">🥛</div>
+<div class="food">🍚</div>
+<div class="food">🌾</div>
+<div class="food">🌶️</div>
+<div class="food">🍅</div>
+
+<div class="container">
+
+<a href="admin_dashboard.html" class="back">
+⬅ Back
+</a>
+
+<div class="icon">
+💬
+</div>
+
+<h1>
+Feedback Form
+</h1>
+
+<p>
+We value your feedback. Help us improve Smart Food Connect.
+</p>
+
+<div class="input-group">
+
+<label>Name</label>
+
+<input
+type="text"
+id="name"
+placeholder="Enter your name">
+
+</div>
+
+<div class="input-group">
+
+<label>Email</label>
+
+<input
+type="email"
+id="email"
+placeholder="Enter your email">
+
+</div>
+
+<div class="input-group">
+
+<label>Rating</label>
+
+<select id="rating">
+
+<option value="">
+Select Rating
+</option>
+
+<option>⭐⭐⭐⭐⭐ Excellent</option>
+<option>⭐⭐⭐⭐ Good</option>
+<option>⭐⭐⭐ Average</option>
+<option>⭐⭐ Poor</option>
+<option>⭐ Very Poor</option>
+
+</select>
+
+</div>
+
+<div class="input-group">
+
+<label>Your Feedback</label>
+
+<textarea
+id="message"
+placeholder="Write your feedback here">
+</textarea>
+
+</div>
+
+<button
+class="submit-btn"
+id="submitFeedback">
+
+Submit Feedback
+
+</button>
+
+</div>
+
+<script type="module" src="./js/feedback.js"></script>
+
+</body>
+</html>

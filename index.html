@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Food Connect</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#eaf8ff,#cfefff);
+overflow-x:hidden;
+}
+
+/* Navigation */
+
+nav{
+background:#0b5ed7;
+color:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 8%;
+position:sticky;
+top:0;
+}
+
+nav h2{
+font-size:28px;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:25px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* Hero */
+
+.hero{
+height:90vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+position:relative;
+overflow:hidden;
+}
+
+.hero h1{
+font-size:55px;
+color:#0b5ed7;
+z-index:2;
+}
+
+.hero p{
+margin:20px;
+font-size:20px;
+width:70%;
+color:#333;
+z-index:2;
+}
+
+.btn{
+background:#0b5ed7;
+color:white;
+padding:15px 35px;
+text-decoration:none;
+border-radius:40px;
+font-size:18px;
+transition:.3s;
+z-index:2;
+}
+
+.btn:hover{
+background:#084298;
+transform:scale(1.05);
+}
+
+/* Floating Food Animation */
+
+.food{
+position:absolute;
+font-size:35px;
+opacity:.6;
+animation:float linear infinite;
+}
+
+/* Different positions */
+
+.food:nth-child(1){
+left:5%;
+animation-duration:8s;
+}
+
+.food:nth-child(2){
+left:15%;
+animation-duration:11s;
+}
+
+.food:nth-child(3){
+left:25%;
+animation-duration:9s;
+}
+
+.food:nth-child(4){
+left:35%;
+animation-duration:13s;
+}
+
+.food:nth-child(5){
+left:45%;
+animation-duration:10s;
+}
+
+.food:nth-child(6){
+left:55%;
+animation-duration:8s;
+}
+
+.food:nth-child(7){
+left:65%;
+animation-duration:12s;
+}
+
+.food:nth-child(8){
+left:75%;
+animation-duration:9s;
+}
+
+.food:nth-child(9){
+left:85%;
+animation-duration:11s;
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(100vh) rotate(0deg);
+opacity:0;
+}
+
+50%{
+opacity:.7;
+}
+
+100%{
+transform:translateY(-120vh) rotate(360deg);
+opacity:0;
+}
+
+}
+
+/* About */
+
+.about{
+padding:80px 10%;
+text-align:center;
+}
+
+.about h2{
+color:#0b5ed7;
+margin-bottom:20px;
+}
+
+.cards{
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+margin-top:40px;
+}
+
+.card{
+background:white;
+width:280px;
+padding:25px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card h3{
+color:#0b5ed7;
+margin-bottom:10px;
+}
+
+/* Footer */
+
+footer{
+background:#0b5ed7;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:50px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<h2>🍽️ Smart Food Connect</h2>
+
+<ul>
+<li><a href="login_register.html">Login</a></li>
+<li><a href="contact_us.html">Contact</a></li>
+</ul>
+
+</nav>
+
+<div class="hero">
+
+<div class="food">🍎</div>
+<div class="food">🥗</div>
+<div class="food">🥕</div>
+<div class="food">🍞</div>
+<div class="food">🥛</div>
+<div class="food">🍚</div>
+<div class="food">🌾</div>
+<div class="food">🌶️</div>
+<div class="food">🍅</div>
+
+<h1>Reduce Food Waste</h1>
+
+<p>
+Connecting Food Donors, NGOs and Volunteers to distribute surplus food to people in need.
+</p>
+
+<a href="login_register.html" class="btn">Get Started</a>
+
+</div>
+
+<section class="about">
+
+<h2>Our Mission</h2>
+
+<p>
+Smart Food Connect helps reduce food waste by connecting restaurants, hotels, individuals, NGOs and volunteers through a simple platform.
+</p>
+
+<div class="cards">
+
+<div class="card">
+<h3>🍱 Donate</h3>
+<p>Share surplus food instead of wasting it.</p>
+</div>
+
+<div class="card">
+<h3>🤝 Connect</h3>
+<p>NGOs and volunteers receive food requests quickly.</p>
+</div>
+
+<div class="card">
+<h3>❤️ Serve</h3>
+<p>Deliver food safely to people in need.</p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>© 2026 Smart Food Connect | Together We Can End Food Waste</p>
+
+</footer>
+
+</body>
+</html>

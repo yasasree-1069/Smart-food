@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NGO Dashboard - Smart Food Connect</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#eaf8ff,#cfefff);
+min-height:100vh;
+padding:40px;
+}
+
+.food{
+position:absolute;
+font-size:35px;
+opacity:.5;
+animation:float linear infinite;
+}
+
+.food:nth-child(1){left:5%;animation-duration:8s;}
+.food:nth-child(2){left:15%;animation-duration:10s;}
+.food:nth-child(3){left:25%;animation-duration:9s;}
+.food:nth-child(4){left:35%;animation-duration:11s;}
+.food:nth-child(5){left:45%;animation-duration:8s;}
+.food:nth-child(6){left:55%;animation-duration:12s;}
+.food:nth-child(7){left:65%;animation-duration:10s;}
+.food:nth-child(8){left:75%;animation-duration:9s;}
+.food:nth-child(9){left:85%;animation-duration:13s;}
+
+@keyframes float{
+0%{
+transform:translateY(100vh) rotate(0deg);
+opacity:0;
+}
+50%{
+opacity:.7;
+}
+100%{
+transform:translateY(-120vh) rotate(360deg);
+opacity:0;
+}
+}
+
+.container{
+width:90%;
+max-width:1100px;
+margin:auto;
+position:relative;
+z-index:1;
+}
+
+.header{
+background:#0b5ed7;
+padding:35px;
+border-radius:20px;
+color:white;
+text-align:center;
+margin-bottom:30px;
+position:relative;
+}
+
+.top-buttons{
+position:absolute;
+top:20px;
+right:20px;
+display:flex;
+gap:10px;
+}
+
+.top-buttons button{
+padding:10px 18px;
+border:none;
+border-radius:20px;
+background:white;
+color:#0b5ed7;
+font-weight:bold;
+cursor:pointer;
+}
+
+.dashboard{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:20px;
+box-shadow:0 10px 20px rgba(0,0,0,.15);
+}
+
+.card h2{
+color:#0b5ed7;
+margin-bottom:20px;
+text-align:center;
+}
+
+.item{
+background:#f5faff;
+padding:15px;
+margin:15px 0;
+border-radius:10px;
+}
+
+.acceptBtn{
+width:100%;
+padding:12px;
+border:none;
+border-radius:10px;
+background:#0b5ed7;
+color:white;
+cursor:pointer;
+margin-top:10px;
+}
+
+.acceptBtn:hover{
+background:#084298;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="food">🍎</div>
+<div class="food">🥗</div>
+<div class="food">🥕</div>
+<div class="food">🍞</div>
+<div class="food">🥛</div>
+<div class="food">🍚</div>
+<div class="food">🌾</div>
+<div class="food">🌶️</div>
+<div class="food">🍅</div>
+
+<div class="container">
+
+<div class="header">
+
+<div class="top-buttons">
+
+<button onclick="goVolunteer()">
+Volunteers
+</button>
+
+<button onclick="logout()">
+Logout
+</button>
+
+</div>
+
+<h1>🍽 NGO Dashboard</h1>
+
+<p>
+Manage food donations and help distribute food efficiently
+</p>
+
+</div>
+
+
+<div class="dashboard">
+
+<div class="card">
+
+<h2>
+Available Food Donations
+</h2>
+
+<div id="donationContainer">
+
+Loading donations...
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+function goVolunteer(){
+
+window.location.href=
+"volunteer_dashboard.html";
+
+}
+
+function logout(){
+
+window.location.href=
+"login_register.html";
+
+}
+
+</script>
+
+
+<script type="module"
+src="./js/ngo.js">
+</script>
+
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#eaf8ff,#cfefff);
+padding:40px;
+min-height:100vh;
+overflow-y:auto;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+}
+
+/* Header */
+
+.header{
+background:#0b5ed7;
+padding:30px;
+border-radius:20px;
+color:white;
+text-align:center;
+margin-bottom:30px;
+box-shadow:0 10px 20px rgba(0,0,0,.2);
+}
+
+/* Analytics Cards */
+
+.cards{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-bottom:40px;
+
+}
+
+.card{
+
+background:white;
+padding:30px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 10px 20px rgba(0,0,0,.15);
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+transition:.4s;
+
+}
+
+.card h2{
+
+color:#0b5ed7;
+margin-bottom:15px;
+
+}
+
+.count{
+
+font-size:40px;
+font-weight:bold;
+color:#333;
+
+}
+
+/* Messages */
+
+.section-title{
+
+margin:30px 0 20px;
+color:#0b5ed7;
+font-size:28px;
+text-align:center;
+
+}
+
+.message-container{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(400px,1fr));
+gap:25px;
+margin-bottom:30px;
+
+}
+
+.message-box{
+
+background:white;
+padding:25px;
+border-radius:20px;
+box-shadow:0 10px 20px rgba(0,0,0,.15);
+
+}
+
+.message-box h2{
+
+text-align:center;
+color:#0b5ed7;
+margin-bottom:20px;
+
+}
+
+.item{
+
+background:#f5faff;
+padding:15px;
+border-radius:10px;
+margin-bottom:15px;
+border-left:5px solid #0b5ed7;
+
+}
+
+.item p{
+
+margin:5px 0;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+
+<h1>
+📊 Admin Dashboard
+</h1>
+
+<p>
+Smart Food Connect Analytics
+</p>
+
+</div>
+
+
+<div class="cards">
+
+<div class="card">
+
+<h2>Total Users</h2>
+
+<div id="usersCount" class="count">
+0
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>Total Donations</h2>
+
+<div id="donationsCount" class="count">
+0
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>Accepted</h2>
+
+<div id="acceptedCount" class="count">
+0
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>Delivered</h2>
+
+<div id="deliveredCount" class="count">
+0
+</div>
+
+</div>
+
+</div>
+
+
+<h1 class="section-title">
+
+📨 User Messages
+
+</h1>
+
+
+<div class="message-container">
+
+<div class="message-box">
+
+<h2>
+💬 Feedback Messages
+</h2>
+
+<div id="feedbackList">
+
+Loading...
+
+</div>
+
+</div>
+
+
+<div class="message-box">
+
+<h2>
+📞 Contact Messages
+</h2>
+
+<div id="contactList">
+
+Loading...
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script type="module" src="./js/admin.js"></script>
+
+<script type="module" src="./js/adminMessages.js"></script>
+
+</body>
+</html>
